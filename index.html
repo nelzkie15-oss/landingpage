@@ -25,15 +25,14 @@
                         <h1 class="">Sign In</h1>
                         <p class="">Log in to your account to continue.</p>
                         
-                        <form class="text-left" action="dashboard.html">
+                        <form id="login-form" class="text-left">
                             <div class="form">
-
                                 <div id="username-field" class="field-wrapper input">
                                     <label for="username">USERNAME</label>
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
                                     <input id="username" name="username" type="text" class="form-control" placeholder="e.g John_Doe">
                                 </div>
-
+                
                                 <div id="password-field" class="field-wrapper input mb-2">
                                     <div class="d-flex justify-content-between">
                                         <label for="password">PASSWORD</label>
@@ -48,18 +47,83 @@
                                         <button type="submit" class="btn btn-primary" value="">Log In</button>
                                     </div>
                                 </div>
-
+                
                                 <p class="signup-link">Not registered ? <a href="auth_register_boxed.html">Create an account</a></p>
-
                             </div>
                         </form>
-
+                        <div id="message" class="mt-3"></div>
                     </div>                    
                 </div>
             </div>
         </div>
     </div>
+    <script>
+     const accounts =  
+      [
+            {
+                "id": 1,
+                "username": "admin",
+                "email": "admin@gmail.com",
+                "password": "123456",
+                "role": "admin"
+            },
+            {
+                "id": 2,
+                "username": "crewel",
+                "email": "crew@gmail.com",
+                "password": "123456",
+                "role": "crew"
+            },
+            {
+                "id": 3,
+                "username": "office_1",
+                "email": "office@gmail.com",
+                "password": "123456",
+                "role": "offcie"
+            },
+            {
+                "id": 4,
+                "username": "accounting_1",
+                "email": "accounting@gmail.com",
+                "password": "123456",
+                "role": "accounting"
+            }
+        ]
 
+
+        document.getElementById('login-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            const messageDiv = document.getElementById('message');
+
+            const user = accounts.find(account => account.username === username && account.password === password);
+
+            if (user) {
+                messageDiv.innerHTML = `<div class="alert alert-success">Login successful! Welcome, ${user.username}.</div>`;
+                switch(user.role) {
+                    case 'admin':
+                        window.location.href = 'admin_dashboard.html';
+                        break;
+                    case 'crew':
+                        window.location.href = 'crew_dashboard.html';
+                        break;
+                    case 'office':
+                        window.location.href = 'office_dashboard.html';
+                        break;
+                    case 'accounting':
+                        window.location.href = 'accounting_dashboard.html';
+                        break;
+                    default:
+                        window.location.href = 'default_dashboard.html';
+                        break;
+                }
+            } else {
+                messageDiv.innerHTML = '<div class="alert alert-danger">Invalid username or password. Please try again.</div>';
+            }
+        });
+    </script>
     <script src="assets/js/libs/jquery-3.1.1.min.js"></script>
     <script src="bootstrap/js/popper.min.js"></script>
     <script src="bootstrap/js/bootstrap.min.js"></script>
