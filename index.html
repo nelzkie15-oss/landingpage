@@ -36,21 +36,21 @@
         .slider {
             position: relative;
             width: 100%;
-            height: 500px;
-            overflow: hidden;
-          }
-          
-          .slider-content {
+            height: 40.6rem;
+
+        }
+
+        .slider-content {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            object-fit: contain;
             display: none;
-          }
-          
-          .slider-text {
+        }
+
+        .slider-text {
             position: absolute;
             bottom: 0;
             left: 0;
@@ -58,11 +58,12 @@
             padding: 20px;
             background-color: rgba(0, 0, 0, 0.5);
             color: #fff;
-          }
-          
-          .active {
+        }
+
+
+        .active {
             display: block;
-          }
+        }
     </style>
 </head>
 
@@ -179,44 +180,49 @@
             </div>
         </div>
     </div> -->
-   
-   
-   <!-- <div class="container-fluid mt-3"> -->
+
+
+    <!-- <div class="container-fluid mt-3"> -->
     <div class="slider">
         <div class="slider-content">
-          <img decoding="async" src="guestassets/img/Banner-RMAL-3.jpg" alt="image1" width="100%">
-          <div class="slider-text">
-            <h3>Image 1</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-          </div>
+            <img style="max-height: 40.6rem; height: 45.6rem; object-fit: fill;" decoding="async"
+                src="guestassets/img/Banner-RMAL-3.jpg" alt="image1" width="100%">
+            <div class="slider-text">
+                <h3>Image 1</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>
         </div>
         <div class="slider-content">
-          <img decoding="async" src="guestassets/img/slide2.jpg" alt="image2"  width="100%">
-          <div class="slider-text">
-            <h3>Image 2</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><div class='code-block code-block-6' style='margin: 8px 0; clear: both;'> <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2145094925886663"
-           crossorigin="anonymous"></script> <ins class="adsbygoogle"
-           style="display:block; text-align:center;"
-           data-ad-layout="in-article"
-           data-ad-format="fluid"
-           data-ad-client="ca-pub-2145094925886663"
-           data-ad-slot="5699863678"></ins> <script>(adsbygoogle = window.adsbygoogle || []).push({});</script></div>
-      
-          </div>
+            <img style="max-height: 40.6rem; height: 45.6rem; object-fit: fill;" decoding="async"
+                src="guestassets/img/slide2.jpg" alt="image2" width="100%">
+            <div class="slider-text">
+                <h3>Image 2</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <div class='code-block code-block-6' style='margin: 8px 0; clear: both;'>
+                    <script async
+                        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2145094925886663"
+                        crossorigin="anonymous"></script> <ins class="adsbygoogle"
+                        style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid"
+                        data-ad-client="ca-pub-2145094925886663" data-ad-slot="5699863678"></ins>
+                    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+                </div>
+
+            </div>
         </div>
         <div class="slider-content">
-          <img decoding="async" src="guestassets/img/slide3.jpg" alt="image3"  width="100%">
-          <div class="slider-text">
-            <h3>Image 3</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-          </div>
+            <img style="max-height: 40.6rem; height: 45.6rem; object-fit: fill;" decoding="async"
+                src="guestassets/img/slide3.jpg" alt="image3" width="100%">
+            <div class="slider-text">
+                <h3>Image 3</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>
         </div>
-      </div>
-   
+    </div>
+
     <!-- </div> -->
-   
-   
-   
+
+
+
     <!-- Carousel End -->
 
 
@@ -760,17 +766,17 @@
         var maxIndex = contents.length - 1;
 
         function nextImage() {
-        currentIndex++;
+            currentIndex++;
 
-        if (currentIndex > maxIndex) {
-            currentIndex = 0;
-        }
+            if (currentIndex > maxIndex) {
+                currentIndex = 0;
+            }
 
-        contents.forEach(function(content) {
-            content.classList.remove('active');
-        });
+            contents.forEach(function (content) {
+                content.classList.remove('active');
+            });
 
-        contents[currentIndex].classList.add('active');
+            contents[currentIndex].classList.add('active');
         }
 
         setInterval(nextImage, 3000);
