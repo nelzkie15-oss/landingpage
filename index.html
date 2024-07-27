@@ -30,6 +30,39 @@
 
     <!-- Template Stylesheet -->
     <link href="guestassets/css/style.css" rel="stylesheet">
+
+    <style>
+        .slider {
+            position: relative;
+            width: 100%;
+            height: 500px;
+            overflow: hidden;
+          }
+          
+          .slider-content {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: none;
+          }
+          
+          .slider-text {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: #fff;
+          }
+          
+          .active {
+            display: block;
+          }
+    </style>
 </head>
 
 <body>
@@ -92,7 +125,7 @@
 
 
     <!-- Carousel Start -->
-    <div class="container-fluid p-0 pb-5">
+    <!-- <div class="container-fluid p-0 pb-5">
         <div class="owl-carousel header-carousel position-relative mb-5">
             <div class="owl-carousel-item position-relative">
                 <img class="img-fluid" src="guestassets/img/carousel-1.jpg" alt="">
@@ -127,7 +160,45 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
+   
+   
+   
+    <div class="slider">
+        <div class="slider-content">
+          <img decoding="async" src="image1.jpg" alt="image1">
+          <div class="slider-text">
+            <h3>Image 1</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          </div>
+        </div>
+        <div class="slider-content">
+          <img decoding="async" src="image2.jpg" alt="image2">
+          <div class="slider-text">
+            <h3>Image 2</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><div class='code-block code-block-6' style='margin: 8px 0; clear: both;'> <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2145094925886663"
+           crossorigin="anonymous"></script> <ins class="adsbygoogle"
+           style="display:block; text-align:center;"
+           data-ad-layout="in-article"
+           data-ad-format="fluid"
+           data-ad-client="ca-pub-2145094925886663"
+           data-ad-slot="5699863678"></ins> <script>(adsbygoogle = window.adsbygoogle || []).push({});</script></div>
+      
+          </div>
+        </div>
+        <div class="slider-content">
+          <img decoding="async" src="image3.jpg" alt="image3">
+          <div class="slider-text">
+            <h3>Image 3</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          </div>
+        </div>
+      </div>
+   
+   
+   
+   
+   
     <!-- Carousel End -->
 
 
@@ -662,6 +733,27 @@
 
     <!-- Template Javascript -->
     <script src="guestassets/js/main.js"></script>
+    <script>
+        var currentIndex = 0;
+        var contents = document.querySelectorAll('.slider-content');
+        var maxIndex = contents.length - 1;
+
+        function nextImage() {
+        currentIndex++;
+
+        if (currentIndex > maxIndex) {
+            currentIndex = 0;
+        }
+
+        contents.forEach(function(content) {
+            content.classList.remove('active');
+        });
+
+        contents[currentIndex].classList.add('active');
+        }
+
+        setInterval(nextImage, 3000);
+    </script>
 </body>
 
 </html>
