@@ -28,6 +28,35 @@
 
     <style>
 
+        .owl-carousel .nav-btn{
+            height: 47px;
+            position: absolute;
+            width: 26px;
+            cursor: pointer;
+            top: 100px !important;
+          }
+          
+          .owl-carousel .owl-prev.disabled,
+          .owl-carousel .owl-next.disabled{
+          pointer-events: none;
+          opacity: 0.2;
+          }
+          
+          .owl-carousel .prev-slide{
+            background: url(nav-icon.png) no-repeat scroll 0 0;
+            left: -33px;
+          }
+          .owl-carousel .next-slide{
+            background: url(nav-icon.png) no-repeat scroll -24px 0px;
+            right: -33px;
+          }
+          .owl-carousel .prev-slide:hover{
+           background-position: 0px -53px;
+          }
+          .owl-carousel .next-slide:hover{
+          background-position: -24px -53px;
+          }  
+
         .navbar-light .navbar-toggler-icon {
             background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='rgba(255, 255, 255, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
             border-color: rgb(251, 255, 255);
@@ -543,7 +572,25 @@
      <script src="guestassets/lib/owlcarousel/owl.carousel.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
     <script>
-        $(".slider1").owlCarousel({
+
+        $('.slider1').owlCarousel({
+            margin: 10,
+            nav: true,
+            navText:["<div class='nav-btn prev-slide'></div>","<div class='nav-btn next-slide'></div>"],
+            responsive: {
+                0: {
+                    items: 1
+                },
+                600: {
+                    items: 3
+                },
+                1000: {
+                    items: 5
+                }
+            }
+        });
+
+        $(".slider12").owlCarousel({
             items : 4,
             loop  : true,
             margin : 30,
