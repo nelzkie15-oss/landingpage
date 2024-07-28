@@ -197,6 +197,53 @@
             background: #2059A6;
             width: 0%;
         }
+
+
+        .big-image {
+            height: 100vh;
+            width: 100vw;
+            position: relative;
+            background-size: cover;
+            background-position: 50% 50%;
+            background-image: url("https://images.unsplash.com/photo-1441974231531-c6227db76b6e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1920&q=80");
+          }
+          
+          .overlay {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            top: 0;
+            left: 0;
+            background: rgba(0, 0, 0, 0.65);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+          }
+          
+          .overlay h1 {
+            font-size: 65px;
+            letter-spacing: 0px;
+            margin: 0 0 5px;
+          }
+          
+          .overlay p {
+            margin: 0;
+            font-size: 28px;
+          }
+          
+          #vids {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: 60px;
+          }
+          
+          #vids a:first-of-type {
+            margin-bottom: 5px;
+          }
     </style>
 </head>
 
@@ -484,6 +531,23 @@
         </div>
     </div>
     
+
+    <div class="big-image">
+        <div class="overlay">
+          <h1>Hero Image With Overlay</h1>
+          <p>A full width background image built with HTML & CSS.</p>
+        </div>
+      </div>
+      
+      <div id="vids">
+        <a href="https://youtu.be/N7W-S4JhMXY" target="_blank">
+          Build An Image Slider With React Hooks
+        </a>
+      
+        <a href="https://www.youtube.com/watch?v=GZ4d3HEn9zg" target="_blank">
+          Code A Thumbnail Gallery With React
+        </a>
+      </div>
 
 
     <!-- Footer Start -->
