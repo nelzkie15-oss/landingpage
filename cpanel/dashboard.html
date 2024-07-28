@@ -1,0 +1,982 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no">
+    <title>MOL</title>
+    <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico"/>
+    <link href="assets/css/loader.css" rel="stylesheet" type="text/css" />
+    <script src="assets/js/loader.js"></script>
+    <!-- BEGIN GLOBAL MANDATORY STYLES -->
+    <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/plugins.css" rel="stylesheet" type="text/css" />
+    <!-- END GLOBAL MANDATORY STYLES -->
+
+    <!-- BEGIN PAGE LEVEL PLUGINS/CUSTOM STYLES -->
+    <link href="plugins/apex/apexcharts.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/dashboard/dash_2.css" rel="stylesheet" type="text/css" />
+    <!-- END PAGE LEVEL PLUGINS/CUSTOM STYLES -->
+
+    <!-- FAFA ICONS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-chart-geo"></script>
+    <style>
+        .apexcharts-canvas {
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body class="alt-menu sidebar-noneoverflow">
+    <!-- BEGIN LOADER -->
+    <div id="load_screen"> <div class="loader"> <div class="loader-content">
+        <div class="spinner-grow align-self-center"></div>
+    </div></div></div>
+    <!--  END LOADER -->
+
+    <!--  BEGIN NAVBAR  -->
+    <div class="header-container fixed-top">
+        <header class="header navbar navbar-expand-sm expand-header">
+            <a href="javascript:void(0);" class="sidebarCollapse" data-placement="bottom"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></a>
+
+            <ul class="navbar-item flex-row ml-auto">
+
+ 
+
+  
+                <li class="nav-item dropdown user-profile-dropdown  order-lg-0 order-1">
+                    <a href="javascript:void(0);" class="nav-link dropdown-toggle user" id="userProfileDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user-check"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="8.5" cy="7" r="4"></circle><polyline points="17 11 19 13 23 9"></polyline></svg>
+                    </a>
+                    <div class="dropdown-menu position-absolute e-animated e-fadeInUp" aria-labelledby="userProfileDropdown">
+                        <div class="user-profile-section">                            
+                            <div class="media mx-auto">
+                                <img src="assets/img/90x90.jpg" class="img-fluid mr-2" alt="avatar">
+                                <div class="media-body">
+                                    <h5>Alan Green</h5>
+                                    <p>Web Developer</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dropdown-item">
+                            <a href="user_profile.html">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg> <span>My Profile</span>
+                            </a>
+                        </div>
+                        <div class="dropdown-item">
+                            <a href="apps_mailbox.html">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-inbox"><polyline points="22 12 16 12 14 15 10 15 8 12 2 12"></polyline><path d="M5.45 5.11L2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"></path></svg> <span>My Inbox</span>
+                            </a>
+                        </div>
+                        <div class="dropdown-item">
+                            <a href="auth_lockscreen.html">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-lock"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg> <span>Lock Screen</span>
+                            </a>
+                        </div>
+                        <div class="dropdown-item">
+                            <a href="auth_login.html">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-log-out"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg> <span>Log Out</span>
+                            </a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </header>
+    </div>
+    <!--  END NAVBAR  -->
+
+    <!--  BEGIN MAIN CONTAINER  -->
+    <div class="main-container sidebar-closed sbar-open" id="container">
+
+        <div class="overlay"></div>
+        <div class="cs-overlay"></div>
+        <div class="search-overlay"></div>
+
+        <!--  BEGIN SIDEBAR  -->
+        <div class="sidebar-wrapper sidebar-theme">
+            
+            <nav id="sidebar">
+                <ul class="navbar-nav theme-brand flex-row text-center">
+                    <li class="nav-item theme-logo">
+                        <a href="index.html">
+                            <img src="assets/img/90x90.jpg" class="navbar-logo" alt="logo">
+                        </a>
+                    </li>
+                    <li class="nav-item theme-text">
+                        <a href="index.html" class="nav-link">MMNS</a>
+                    </li>
+                </ul>
+            
+                <ul class="list-unstyled menu-categories" id="accordionExample">
+                    <li class="menu active">
+                        <a href="#dashboard" data-toggle="collapse" aria-expanded="true" class="dropdown-toggle">
+                            <div class="">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home">
+                                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                                    <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                                </svg>
+                                <span>Dashboard</span>
+                            </div>
+                        </a>
+                        <ul class="collapse submenu recent-submenu mini-recent-submenu list-unstyled show" id="dashboard" data-parent="#accordionExample">
+                            <!-- Add your submenu items here if needed -->
+                        </ul>
+                    </li>
+
+                    <li class="menu">
+                        <a href="account.html" aria-expanded="false" class="dropdown-toggle">
+                            <div class="">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user">
+                                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                    <circle cx="12" cy="7" r="4"></circle>
+                                </svg>
+                                <span>Account</span>
+                            </div>
+                        </a>
+                    </li>
+                    
+                    
+            
+                    <li class="menu">
+                        <a href="technical.html"  aria-expanded="false" class="dropdown-toggle">
+                            <div class="">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-activity">
+                                    <polyline points="22 2 11 13 8 10 2 20"></polyline>
+                                </svg>
+                                <span>Technical</span>
+                            </div>
+                        </a>
+                    </li>
+
+                  
+                    
+                    <li class="menu">
+                        <a href="#marine"  aria-expanded="false" class="dropdown-toggle">
+                            <div class="">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-anchor">
+                                    <path d="M12 2v20M5.5 11l-2 2 2 2 2-2-2-2zm13 0l-2 2 2 2 2-2-2-2zM4 7h16v2H4z"></path>
+                                </svg>
+                                <span>Marine</span>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="menu">
+                        <a href="#accounting"  aria-expanded="false" class="dropdown-toggle">
+                            <div class="">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calculator">
+                                    <path d="M16 2v4H8V2h8zM7 8v1H5V8h2zM7 11v1H5v-1h2zM7 14v1H5v-1h2zM7 17v1H5v-1h2zM11 8v1H9V8h2zM11 11v1H9v-1h2zM11 14v1H9v-1h2zM11 17v1H9v-1h2zM16 8v1h-2V8h2zM16 11v1h-2v-1h2zM16 14v1h-2v-1h2zM16 17v1h-2v-1h2z"></path>
+                                </svg>
+                                <span>Accounting</span>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="menu">
+                        <a href="#procurement"  aria-expanded="false" class="dropdown-toggle">
+                            <div class="">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-truck">
+                                    <path d="M1 4v13h4v-4h12v4h4V9l-3-3H5L2 9v8h-1V4h1zm2 12v-6h14v6H3zM16 9h-8v4H4v-1H1V9h15v1h1v-1h-1z"></path>
+                                </svg>
+                                <span>Procurement</span>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="menu">
+                        <a href="#function1"  aria-expanded="false" class="dropdown-toggle">
+                            <div class="">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-cube">
+                                    <path d="M3 3h18v18H3z"></path>
+                                    <path d="M12 3v18"></path>
+                                    <path d="M3 12h18"></path>
+                                </svg>
+                                <span>Function 1</span>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="menu">
+                        <a href="#function2"  aria-expanded="false" class="dropdown-toggle">
+                            <div class="">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-layer">
+                                    <path d="M12 4l-4 4 4 4 4-4-4-4zm0 0l4 4 4-4M4 12l4 4m0-8l4 4 4-4"></path>
+                                </svg>
+                                <span>Function 2</span>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="menu">
+                        <a href="#function3"  aria-expanded="false" class="dropdown-toggle">
+                            <div class="">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-layers">
+                                    <path d="M12 2l-8 8 8 8 8-8-8-8zm0 2l6 6-6 6-6-6 6-6z"></path>
+                                </svg>
+                                <span>Function 3</span>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="menu">
+                        <a href="#settings"  aria-expanded="false" class="dropdown-toggle">
+                            <div class="">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-settings">
+                                    <path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4zm-7 4a7 7 0 0 1 7-7 7 7 0 0 1 7 7 7 7 0 0 1-7 7 7 7 0 0 1-7-7z"></path>
+                                    <path d="M6.29 7.71a1 1 0 0 0 1.42 1.42L11 7l1.29 1.29a1 1 0 0 0 1.42-1.42L12 5.29a1 1 0 0 0-1.42 0L9 6.71 6.29 4.29a1 1 0 0 0-1.42 1.42L7.71 9l-1.42 1.42z"></path>
+                                </svg>
+                                <span>Settings</span>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="menu">
+                        <a href="#signout"  aria-expanded="false" class="dropdown-toggle">
+                            <div class="">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-log-out">
+                                    <path d="M9 21H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5"></path>
+                                    <polyline points="16 17 21 12 16 7"></polyline>
+                                    <line x1="21" y1="12" x2="9" y2="12"></line>
+                                </svg>
+                                <span>Sign out</span>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            
+            
+
+        </div>
+        <!--  END SIDEBAR  -->
+        
+        <!--  BEGIN CONTENT AREA  -->
+        <div id="content" class="main-content">
+            <div class="layout-px-spacing">
+                <div class="alert alert-success" style="margin-top: 20px;">
+                    Welcome to Admin Dashboard
+                </div>
+                <div class="row layout-top-spacing">
+
+                    <div class="col-xl-8 col-lg-12 col-md-12 col-sm-12 col-12 layout-spacing">
+                        <div class="widget widget-chart-one">
+                            <div class="widget-heading">
+                                <h5 class="">Vessel Insights</h5>
+                                <ul class="tabs tab-pills">
+                                    <li><a href="javascript:void(0);" id="tb_1" class="tabmenu">Monthly</a></li>
+                                </ul>
+                            </div>
+
+                            <div class="widget-content">
+                                <div class="tabs tab-content">
+                                    <div id="content_1" class="tabcontent"> 
+                                        <div id="revenueMonthly"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 col-12 layout-spacing">
+                        <div class="widget-three">
+                            <div class="widget-heading">
+                                <h5 class="">Summary</h5>
+                            </div>
+                            <div class="widget-content">
+
+                                <div class="order-summary">
+
+                                    <div class="summary-list">
+                                        <div class="w-icon">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-shopping-bag"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+                                        </div>
+                                        <div class="w-summary-details">
+                                            
+                                            <div class="w-summary-info">
+                                                <h6>Income</h6>
+                                                <p class="summary-count">$92,600</p>
+                                            </div>
+
+                                            <div class="w-summary-stats">
+                                                <div class="progress">
+                                                    <div class="progress-bar bg-gradient-secondary" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+                                    <div class="summary-list">
+                                        <div class="w-icon">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg>
+                                        </div>
+                                        <div class="w-summary-details">
+                                            
+                                            <div class="w-summary-info">
+                                                <h6>Profit</h6>
+                                                <p class="summary-count">$37,515</p>
+                                            </div>
+
+                                            <div class="w-summary-stats">
+                                                <div class="progress">
+                                                    <div class="progress-bar bg-gradient-success" role="progressbar" style="width: 65%" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+                                    <div class="summary-list">
+                                        <div class="w-icon">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-credit-card"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect><line x1="1" y1="10" x2="23" y2="10"></line></svg>
+                                        </div>
+                                        <div class="w-summary-details">
+                                            
+                                            <div class="w-summary-info">
+                                                <h6>Expenses</h6>
+                                                <p class="summary-count">$55,085</p>
+                                            </div>
+
+                                            <div class="w-summary-stats">
+                                                <div class="progress">
+                                                    <div class="progress-bar bg-gradient-warning" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                    
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                        <!-- add new chart -->
+
+                        <div class="col-xl-8 col-lg-6 col-md-12 col-sm-12 col-12 layout-spacing">
+                            <div class="widget widget-chart-one">
+                              <div class="widget-heading">
+                                <h5 class="">Revenue</h5>
+                                <ul class="tabs tab-pills">
+                                  <li><a href="javascript:void(0);" id="tb_1" class="tabmenu">Monthly</a></li>
+                                </ul>
+                              </div>
+                              <div class="widget-content">
+                                <div class="tabs tab-content">
+                                  <div id="content_1" class="tabcontent"> 
+                                    <div id="revenue-chart"></div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        
+
+                        <!-- end -->
+                    <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 col-12 layout-spacing">
+                        <div class="widget-two">
+                            <div class="widget-content">
+                                <div class="w-numeric-value">
+                                    <div class="w-content">
+                                        <span class="w-value">Daily sales</span>
+                                        <span class="w-numeric-title">Go to columns for details.</span>
+                                    </div>
+                                    <div class="w-icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-dollar-sign"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+                                    </div>
+                                </div>
+                                <div class="w-chart">
+                                    <div id="daily-sales"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-xl-8 col-lg-6 col-md-12 col-sm-12 col-12 layout-spacing">
+                        <div class="widget widget-chart-one">
+                          <div class="widget-heading">
+                            <h5 class="">Crew Satisfaction</h5>
+                            <ul class="tabs tab-pills">
+                              <li><a href="javascript:void(0);" id="tb_1" class="tabmenu">Monthly</a></li>
+                            </ul>
+                          </div>
+                          <div class="widget-content">
+                            <div class="tabs tab-content">
+                              <div id="content_1" class="tabcontent"> 
+                                <div id="crew-satisfaction-chart"></div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                    <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 col-12 layout-spacing">
+                        <div class="widget-three">
+                            <div class="widget-heading">
+                                <h5 class="">Recently Updated Data</h5>
+                            </div>
+                            <div class="widget-content">
+
+                                <div class="order-summary">
+
+                                    <div class="summary-list">
+                                        <div class="w-icon">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-shopping-bag"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+                                        </div>
+                                        <div class="w-summary-details">
+                                            
+                                            <div class="w-summary-info">
+                                                <h6>Sample Data</h6>
+                                                <p class="summary-count">80%</p>
+                                            </div>
+
+                                            <div class="w-summary-stats">
+                                                <div class="progress">
+                                                    <div class="progress-bar bg-gradient-secondary" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+                                    <div class="summary-list">
+                                        <div class="w-icon">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg>
+                                        </div>
+                                        <div class="w-summary-details">
+                                            
+                                            <div class="w-summary-info">
+                                                <h6>Sample Data </h6>
+                                                <p class="summary-count">$37,515</p>
+                                            </div>
+
+                                            <div class="w-summary-stats">
+                                                <div class="progress">
+                                                    <div class="progress-bar bg-gradient-success" role="progressbar" style="width: 65%" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+                                    <div class="summary-list">
+                                        <div class="w-icon">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-credit-card"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect><line x1="1" y1="10" x2="23" y2="10"></line></svg>
+                                        </div>
+                                        <div class="w-summary-details">
+                                            
+                                            <div class="w-summary-info">
+                                                <h6>Sample Data</h6>
+                                                <p class="summary-count">20%</p>
+                                            </div>
+
+                                            <div class="w-summary-stats">
+                                                <div class="progress">
+                                                    <div class="progress-bar bg-gradient-warning" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                    
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+   
+                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 layout-spacing">
+                        <div class="widget-two">
+                            <div id="chartColumnStacked" class="col-xl-12 layout-spacing">
+                                <div class="widget-header">                                
+                                    <div class="row">
+                                        <div class="col-xl-12 col-md-12 col-sm-12 col-12 mt-2">
+                                            <h4>Target Vs Reality</h4> 
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="chart"></div> 
+                            </div>
+                        </div>
+                    </div>
+   
+
+                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 layout-spacing">
+                        <div class="widget-two">
+                            <div id="chartColumnStacked" class="col-xl-12 layout-spacing">
+                                <div class="widget-header">                                
+                                    <div class="row">
+                                        <div class="col-xl-12 col-md-12 col-sm-12 col-12 mt-2">
+                                            <h4>Volume Vs Service Level</h4> 
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="vvsl-chart"></div> 
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-2 col-lg-2 col-md-4 col-sm-6 col-12 layout-spacing">
+                        <div class="widget-two">
+                            <div id="chartColumnStacked" class="col-xl-12 layout-spacing">
+                                <div class="widget-header">                                
+                                    <div class="row">
+                                        <div class="col-xl-12 col-md-12 col-sm-12 col-12 mt-2">
+                                            <h4>Horizontal Chart</h4> 
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="horizontal-chart1"></div> 
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-2 col-lg-2 col-md-4 col-sm-6 col-12 layout-spacing">
+                        <div class="widget-two">
+                            <div id="chartColumnStacked" class="col-xl-12 layout-spacing">
+                                <div class="widget-header">                                
+                                    <div class="row">
+                                        <div class="col-xl-12 col-md-12 col-sm-12 col-12 mt-2">
+                                            <h4>Horizontal Chart</h4> 
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="horizontal-chart2"></div> 
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-2 col-lg-2 col-md-4 col-sm-6 col-12 layout-spacing">
+                        <div class="widget-two">
+                            <div id="chartColumnStacked" class="col-xl-12 layout-spacing">
+                                <div class="widget-header">                                
+                                    <div class="row">
+                                        <div class="col-xl-12 col-md-12 col-sm-12 col-12 mt-2">
+                                            <h4>Horizontal Chart</h4> 
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="horizontal-chart3"></div> 
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-2 col-lg-2 col-md-4 col-sm-6 col-12 layout-spacing">
+                        <div class="widget-two">
+                            <div id="chartColumnStacked" class="col-xl-12 layout-spacing">
+                                <div class="widget-header">                                
+                                    <div class="row">
+                                        <div class="col-xl-12 col-md-12 col-sm-12 col-12 mt-2">
+                                            <h4>Horizontal Chart</h4> 
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="horizontal-chart4"></div> 
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-2 col-lg-2 col-md-4 col-sm-6 col-12 layout-spacing">
+                        <div class="widget-two">
+                            <div id="chartColumnStacked" class="col-xl-12 layout-spacing">
+                                <div class="widget-header">                                
+                                    <div class="row">
+                                        <div class="col-xl-12 col-md-12 col-sm-12 col-12 mt-2">
+                                            <h4>Horizontal Chart</h4> 
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="horizontal-chart5"></div> 
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-2 col-lg-2 col-md-4 col-sm-6 col-12 layout-spacing">
+                        <div class="widget-two">
+                            <div id="chartColumnStacked" class="col-xl-12 layout-spacing">
+                                <div class="widget-header">                                
+                                    <div class="row">
+                                        <div class="col-xl-12 col-md-12 col-sm-12 col-12 mt-2">
+                                            <h4>Horizontal Chart</h4> 
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="horizontal-chart6"></div> 
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-xl-12 col-lg-6 col-md-6 col-sm-6 col-12 layout-spacing">
+                        <div class="widget-two">
+                            <div id="chartColumnStacked" class="col-xl-12 layout-spacing">
+                                <div class="widget-header">                                
+                                    <div class="row">
+                                        <div class="col-xl-12 col-md-12 col-sm-12 col-12 mt-2">
+                                            <h4>Mapping Sells</h4> 
+                                        </div>
+                                    </div>
+                                </div>
+                                <canvas id="map-chart"></canvas> <!-- Changed to canvas -->
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+        <!--  END CONTENT AREA  -->
+
+    </div>
+    <!-- END MAIN CONTAINER -->
+
+    <!-- BEGIN GLOBAL MANDATORY SCRIPTS -->
+    <script src="assets/js/libs/jquery-3.1.1.min.js"></script>
+    <script src="bootstrap/js/popper.min.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="plugins/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+    <script src="assets/js/app.js"></script>
+    <script>
+        $(document).ready(function() {
+            App.init();
+        });
+    </script>
+    <script src="assets/js/custom.js"></script>
+    <!-- END GLOBAL MANDATORY SCRIPTS -->
+
+    <!-- BEGIN PAGE LEVEL PLUGINS/CUSTOM SCRIPTS -->
+    <script src="plugins/apex/apexcharts.min.js"></script>
+    <script src="assets/js/dashboard/dash_2.js"></script>
+    <!-- BEGIN PAGE LEVEL PLUGINS/CUSTOM SCRIPTS -->
+    <!--  -->
+    <script>
+        var options = {
+       series: [{
+         name: 'Target Sales',
+         data: [70, 85, 95, 90, 80, 100, 110, 105, 120] // Replace with your target sales data
+       }, {
+         name: 'Reality Sales',
+         data: [60, 75, 85, 80, 70, 90, 100, 95, 110] // Replace with your actual sales data
+       }],
+       chart: {
+         type: 'bar',
+         height: 350
+       },
+       plotOptions: {
+         bar: {
+           horizontal: false,
+           columnWidth: '55%',
+           endingShape: 'rounded'
+         },
+       },
+       colors: ['#FFD700', '#00FF00'], // Customize the colors here
+       dataLabels: {
+         enabled: false
+       },
+       stroke: {
+         show: true,
+         width: 2,
+         colors: ['transparent']
+       },
+       xaxis: {
+         categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep'], // Adjust as needed
+       },
+       yaxis: {
+         title: {
+           text: '$ (thousands)'
+         }
+       },
+       fill: {
+         opacity: 1
+       },
+       tooltip: {
+         y: {
+           formatter: function (val) {
+             return "$ " + val + " thousands"
+           }
+         }
+       }
+     };
+     
+     var chart = new ApexCharts(document.querySelector("#chart"), options);
+     chart.render();
+     
+         </script>
+    
+
+    <!-- Horizontal Chart -->
+    <script>
+        var options1 = {
+          series: [{
+            name: 'Target Sales',
+            data: [30, 28, 23, 15, 4] // Replace with your target sales data
+          }],
+          chart: {
+            type: 'bar',
+            height: 350
+          },
+          plotOptions: {
+            bar: {
+                horizontal: true, // Change this to true for horizontal bars
+                barHeight: '40%', // Adjust the height of the bars
+                dataLabels: {
+                    position: 'top' // Position data labels at the end of the bars
+                }
+            },
+        },
+          colors: ['#2196f3'], // Customize the colors here for the first chart
+          dataLabels: {
+            enabled: true,
+            style: {
+                colors: ['#000']
+            },
+            formatter: function (val) {
+                return val;
+            },
+            offsetX: 15, // Adjust this value to add spacing between the bar and the label
+            offsetY: 0, // Adjust this value if needed to position the labels vertically
+            textAnchor: 'start' // Ensures text starts at the offset position
+        },
+          stroke: {
+            show: true,
+            width: 2,
+            colors: ['transparent']
+          },
+          xaxis: {
+            categories: ['NFX', 'BV', 'CMCS', 'RINA', 'ICS'], // Adjust as needed
+          },
+
+          fill: {
+            opacity: 1
+          },
+          tooltip: {
+            y: {
+              formatter: function (val) {
+                return val
+              }
+            }
+          }
+        };
+      
+        var options2 = JSON.parse(JSON.stringify(options1));
+        options2.colors = ['#f44336']; // Customize the colors here for the second chart
+      
+        var options3 = JSON.parse(JSON.stringify(options1));
+        options3.colors = ['#4caf50'];
+
+        var options4 = JSON.parse(JSON.stringify(options1));
+        options4.colors = ['#ff9800'];
+
+        var options5 = JSON.parse(JSON.stringify(options1));
+        options5.colors = ['#673ab7'];
+
+        var options6 = JSON.parse(JSON.stringify(options1));
+        options6.colors = ['#607d8b'];
+      
+        var chart1 = new ApexCharts(document.querySelector("#horizontal-chart1"), options1);
+        chart1.render();
+      
+        var chart2 = new ApexCharts(document.querySelector("#horizontal-chart2"), options2);
+        chart2.render();
+      
+        var chart3 = new ApexCharts(document.querySelector("#horizontal-chart3"), options3);
+        chart3.render();
+
+        var chart4 = new ApexCharts(document.querySelector("#horizontal-chart4"), options4);
+        chart4.render();
+
+        var chart5 = new ApexCharts(document.querySelector("#horizontal-chart5"), options5);
+        chart5.render();
+
+        var chart6 = new ApexCharts(document.querySelector("#horizontal-chart6"), options6);
+        chart6.render();
+      </script>
+      
+     
+
+<!-- Revenue Chart  -->
+<script>
+    var options = {
+      series: [{
+        name: 'Net Profit',
+        data: [44, 55, 57, 56, 61, 58, 63, 60, 66]
+      }, {
+        name: 'Revenue',
+        data: [76, 85, 101, 98, 87, 105, 91, 114, 94]
+      }, {
+        name: 'Free Cash Flow',
+        data: [35, 41, 36, 26, 45, 48, 52, 53, 41]
+      }],
+      chart: {
+        type: 'bar',
+        height: 350
+      },
+      plotOptions: {
+        bar: {
+          horizontal: false,
+          columnWidth: '55%',
+          endingShape: 'rounded'
+        },
+      },
+      dataLabels: {
+        enabled: false
+      },
+      stroke: {
+        show: true,
+        width: 2,
+        colors: ['transparent']
+      },
+      xaxis: {
+        categories: ['Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct'],
+      },
+      yaxis: {
+        title: {
+          text: '$ (thousands)'
+        }
+      },
+      fill: {
+        opacity: 1
+      },
+      tooltip: {
+        y: {
+          formatter: function (val) {
+            return "$ " + val + " thousands"
+          }
+        }
+      }
+    };
+
+    var chart = new ApexCharts(document.querySelector("#revenue-chart"), options);
+    chart.render();
+  </script>
+  <!-- end -->
+
+  <!-- crew satisfactio -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var options = {
+        series: [{
+          name: 'series1',
+          data: [31, 40, 28, 51, 42, 109, 100]
+        }, {
+          name: 'series2',
+          data: [11, 32, 45, 32, 34, 52, 41]
+        }],
+        chart: {
+          height: 350,
+          type: 'area'
+        },
+        dataLabels: {
+          enabled: false
+        },
+        stroke: {
+          curve: 'smooth'
+        },
+        xaxis: {
+          type: 'datetime',
+          categories: ["2018-09-19T00:00:00.000Z", "2018-09-19T01:30:00.000Z", "2018-09-19T02:30:00.000Z", "2018-09-19T03:30:00.000Z", "2018-09-19T04:30:00.000Z", "2018-09-19T05:30:00.000Z", "2018-09-19T06:30:00.000Z"]
+        },
+        tooltip: {
+          x: {
+            format: 'dd/MM/yy HH:mm'
+          },
+        },
+      };
+
+      var chart = new ApexCharts(document.querySelector("#crew-satisfaction-chart"), options);
+      chart.render();
+    });
+  </script>
+
+  <!-- volume vs servisce -->
+   <script>
+    var options = {
+    series: [{
+        name: 'Volume',
+        data: [44, 55, 41, 67, 22, 43, 21, 49] // Adjust this data to represent "Volume"
+    }, {
+        name: 'Service Level',
+        data: [13, 23, 20, 8, 13, 27, 33, 12] // Adjust this data to represent "Service Level"
+    }],
+    chart: {
+        type: 'bar',
+        height: 350,
+        stacked: true,
+        stackType: '100%'
+    },
+    responsive: [{
+        breakpoint: 480,
+        options: {
+            legend: {
+                position: 'bottom',
+                offsetX: -10,
+                offsetY: 0
+            }
+        }
+    }],
+    xaxis: {
+        categories: ['2011 Q1', '2011 Q2', '2011 Q3', '2011 Q4', '2012 Q1', '2012 Q2',
+            '2012 Q3', '2012 Q4'
+        ],
+    },
+    fill: {
+        opacity: 1
+    },
+    legend: {
+        position: 'right',
+        offsetX: 0,
+        offsetY: 50
+    },
+};
+
+var chart = new ApexCharts(document.querySelector("#vvsl-chart"), options);
+chart.render();
+
+   </script>
+
+
+<!-- map chart -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Load GeoJSON data for world map
+        fetch('https://unpkg.com/world-atlas/countries-110m.json')
+            .then(res => res.json())
+            .then(data => {
+                const countries = ChartGeo.topojson.feature(data, data.objects.countries).features;
+
+                const chart = new Chart(document.getElementById('map-chart').getContext('2d'), {
+                    type: 'choropleth',
+                    data: {
+                        labels: countries.map((d) => d.properties.name),
+                        datasets: [{
+                            label: 'Countries',
+                            data: countries.map((d) => ({
+                                feature: d,
+                                value: Math.random() * 100 // Random data for example purposes
+                            }))
+                        }]
+                    },
+                    options: {
+                        showOutline: true,
+                        showGraticule: true,
+                        scales: {
+                            xy: {
+                                projection: 'equalEarth'
+                            }
+                        },
+                        plugins: {
+                            legend: {
+                                display: false
+                            }
+                        }
+                    }
+                });
+            });
+    });
+</script>
+</body>
+</html>
