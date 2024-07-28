@@ -59,13 +59,6 @@
      const accounts =  
       [
             {
-                "id": 1,
-                "username": "admin",
-                "email": "admin@gmail.com",
-                "password": "123456",
-                "role": "admin"
-            },
-            {
                 "id": 2,
                 "username": "crewel",
                 "email": "crew@gmail.com",
@@ -101,9 +94,6 @@
             if (user) {
                 messageDiv.innerHTML = `<div class="alert alert-success">Login successful! Welcome, ${user.username}.</div>`;
                 switch(user.role) {
-                    case 'admin':
-                        window.location.href = 'dashboard.html';
-                        break;
                     case 'crew':
                         window.location.href = 'crew_dashboard.html';
                         break;
