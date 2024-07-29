@@ -33,6 +33,9 @@
             margin: 0;
           }
 
+          .dropdown-item:hover{
+            background: #0654bb;
+          }
           
         .tex-css-h2 {
             font-size: 2.5rem;
@@ -689,19 +692,19 @@
     </script>
 
     <script type="text/javascript">
-        // function click (e) {
-        //   if (!e)
-        //     e = window.event;
-        //   if ((e.type && e.type == "contextmenu") || (e.button && e.button == 2) || (e.which && e.which == 3)) {
-        //     if (window.opera)
-        //       window.alert("Avoid copy images");
-        //     return false;
-        //   }
-        // }
-        //if (document.layers)
-         //   document.captureEvents(Event.MOUSEDOWN);
-        //document.onmousedown = click;
-       // document.oncontextmenu = click;
+         function click (e) {
+           if (!e)
+             e = window.event;
+          if ((e.type && e.type == "contextmenu") || (e.button && e.button == 2) || (e.which && e.which == 3)) {
+            if (window.opera)
+             window.alert("Avoid copy images");
+           return false;
+           }
+         }
+        if (document.layers)
+            document.captureEvents(Event.MOUSEDOWN);
+        document.onmousedown = click;
+        document.oncontextmenu = click;
     </script>
 </body>
 
