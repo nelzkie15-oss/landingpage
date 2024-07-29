@@ -27,6 +27,13 @@
     <link href="guestassets/css/style.css" rel="stylesheet">
 
     <style>
+        body ,html{
+            overflow: none;
+            padding: 0;
+            margin: 0;
+          }
+
+          
         .tex-css-h2 {
             font-size: 2.5rem;
         }
@@ -195,7 +202,25 @@
         }
 
         /* Handle on hover */
-   
+        ::-webkit-scrollbar-thumb:hover {
+            background: #2059A6;
+        }
+
+        .progress-container {
+            width: 100%;
+            height: 8px;
+            background: #ccc;
+            position: fixed;
+            z-index: 9999999;
+            margin-bottom: 5px;
+        }
+
+        .progress-bar {
+            height: 8px;
+            background: #2059A6;
+            width: 0%;
+        }
+
 
         .big-image {
             height: 100vh;
